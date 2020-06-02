@@ -1,0 +1,96 @@
+body{
+	background-color:teal;
+}
+.calculi{
+	margin-left:35%;
+	margin-top:10%;
+	margin-bottom:4%;
+}
+input{
+	width:10%;
+	font-size:24px;
+	border-radius:1px;
+	background-color:grey;
+	color:darkblue;
+	margin-bottom:4px;
+	font-weight:bold;
+	text-shadow:3px 2px 6px blue;
+}
+input:hover{
+	background-color:white;
+}
+#first{
+	width:49.35%;
+	font-size:26px;
+	margin-bottom:1%;
+	margin-left:-4.2%;
+	border:1px solid red;
+	text-align:right;
+	padding: 0 2px 0 1px;
+	color:maroon;
+	text-shadow:none;
+}
+#last{
+	width:20.5%;
+	background-color:yellow;
+}
+#last:hover{
+	background-color:white;
+}
+.col0{
+	background-color:rgb(105,205,15);
+}
+.col1{
+	color:rgb(190,20,20);
+	text-shadow:2px 2px 6px black;
+}
+.col2{
+	color:rgb(0,0,0);
+	text-shadow:2px 2px 7px green;
+}
+.col3{
+	width:20.6%;
+	background-color:green;
+	color:darkblue;
+}
+.title{
+	font-size:30px;
+	color:black;
+	text-align:center;
+}
+@media(max-width:1085px){
+	input{
+		font-size:23px;
+		width:15%;
+	}
+	#first{
+		width:68%;
+	}
+	.col3{
+		width:30.8%;
+	}
+	#last{
+		width:30.8%;
+	}
+	.calculi{
+		margin-left:28%;
+	}
+}
+@media(max-width:655px){
+	input{
+		font-size:23px;
+		width:20%;
+	}
+	#first{
+		width:90%;
+	}
+	.col3{
+		width:41%;
+	}
+	#last{
+		width:41%;
+	}
+	.calculi{
+		margin-left:22%;
+	}
+}
