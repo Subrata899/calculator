@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> smart calculator</title>
+    <link rel="stylesheet" href="cal.css" type="text/css">
+  </head>
+  <body>
+  <p class="title"> Make your calculation easy with this SMART CALCULATOR </p>
+    <div class="calculi" >
+      <form name="cal">
+	    <input id="first" type="text" name="calculator" />
+	    <br/>
+	    <input  type="button" value="1" onclick="cal.calculator.value+='1' "/>
+		<input type="button" value="2" onclick="cal.calculator.value+='2' "/>
+		<input type="button" value="3" onclick="cal.calculator.value+='3' "/>
+		<input class="col1" type="button" value="+" onclick="cal.calculator.value+='+' "/>
+		<br/>
+		<input type="button" value="4" onclick="cal.calculator.value+='4' "/>
+	    <input type="button" value="5" onclick="cal.calculator.value+='5' "/>
+		<input type="button" value="6" onclick="cal.calculator.value+='6' "/>
+		<input class="col1" type="button" value="-" onclick="cal.calculator.value+='-' "/>
+		<br/>
+		<input type="button" value="7" onclick="cal.calculator.value+='7' "/>
+		<input type="button" value="8" onclick="cal.calculator.value+='8' "/>
+		<input type="button" value="9" onclick="cal.calculator.value+='9' "/>
+		<input class="col1" type="button" value="*" onclick="cal.calculator.value+='*' "/>
+		<br/>
+		<input class="col1" type="button" value="%" onclick="percentage()"/>
+		<input  type="button" value="0" onclick="cal.calculator.value+='0' "/>
+		<input class="col2" type="button" value="x2" onclick="cal.calculator.value=cal.calculator.value*cal.calculator.value "/>
+		<input class="col1" type="button" value="/" onclick="cal.calculator.value+='/' "/>
+		<br/>
+		<input class="col2" type="button" value="x3" onclick="cal.calculator.value=cal.calculator.value*cal.calculator.value*cal.calculator.value "/>
+		<input class="col1" type="button" value="&#8730" onclick="cal.calculator.value=Math.sqrt(cal.calculator.value) "/>
+		<input class="col2" type="button" value="x^y" onclick="power()"/>
+		<input class="col1" type="button" value="+/-" onclick="cal.calculator.value=-(+cal.calculator.value) "/>
+		
+		<br/>
+		<input class="col2" type="button" value="(" onclick="cal.calculator.value+='(' "/>
+		<input class="col2" type="button" value="." onclick="cal.calculator.value+='.' "/>
+		<input class="col2" type="button" value=")" onclick="cal.calculator.value+=')' "/>
+		<input class="col0" type="button" value="&#8592" onclick="backspace()" />
+		<br/>
+		<input class="col2" type="button" value="1/x" onclick="cal.calculator.value=(1/cal.calculator.value)"/> 
+		<input class="col2" type="button" value="sin()" onclick="cal.calculator.value=Math.sin((cal.calculator.value)*Math.PI/180)"/>
+	    <input class="col2" type="button" value="cos()" onclick="cal.calculator.value=Math.cos((cal.calculator.value)*Math.PI/180)"/>
+        <input class="col2" type="button" value="PI" onclick="cal.calculator.value+=Math.PI" />		
+		<br/>
+		<input class="col2" type="button" value="tan()" onclick="cal.calculator.value=Math.tan((cal.calculator.value)*Math.PI/180)"/> 
+		<input class="col2" type="button" value="sin-1" onclick="cal.calculator.value=(Math.asin(cal.calculator.value)/(Math.PI/180))"/> 
+		<input class="col2" type="button" value="cos-1" onclick="cal.calculator.value=(Math.acos(cal.calculator.value)/(Math.PI/180))"/>
+		<input class="col2" type="button" value="tan-1" onclick="cal.calculator.value=(Math.atan(cal.calculator.value)/(Math.PI/180))"/>
+		<br/>
+		<input class="col2" type="button" value="log()" onclick="cal.calculator.value=Math.log(cal.calculator.value).toFixed(4)"/>
+		<input class="col2" type="button" value="exp()" onclick="cal.calculator.value=Math.exp(cal.calculator.value).toFixed(4)"/>
+		<input class="col2" type="button" value="n!" onclick="factorial()"/>
+		<input class="col2" type="button" value="Mod" onclick="cal.calculator.value+='%' "/>
+		<br/>
+		<input id="last" type="button" value="C" onclick="cal.calculator.value=' ' "/>
+		<input class="col3" type="button" value="=" onclick="cal.calculator.value=eval(cal.calculator.value)"/>
+	
+	  </form>
+	</div>
+	<script type="text/javascript">
+ 
+	  function backspace(){
+	  let remove=cal.calculator.value;
+	  if(remove.length>0){
+	  remove=remove.substring(0,remove.length-1);
+	  cal.calculator.value=remove;
+	  }
+	  }
+	  
+	  function factorial(){
+	  let num=cal.calculator.value;
+	  if(num==0||num==1){
+	  cal.calculator.value=1;
+	  }
+	  for(let i=num-1;i>=1;i--){
+	  cal.calculator.value*=i;
+	  }
+	  }
+      
+	  function percentage(){
+	  let percent=cal.calculator.value;
+	  percent=cal.calculator.value/100;
+	  cal.calculator.value=percent+'*';
+	  }
+	  body{
+	background-color:teal;
+}
+.calculi{
+	margin-left:35%;
+	margin-top:10%;
+	margin-bottom:4%;
+}
+input{
+	width:10%;
+	font-size:24px;
+	border-radius:1px;
+	background-color:grey;
+	color:darkblue;
+	margin-bottom:4px;
+	font-weight:bold;
+	text-shadow:3px 2px 6px blue;
+}
+input:hover{
+	background-color:white;
+}
+#first{
+	width:49.35%;
+	font-size:26px;
+	margin-bottom:1%;
+	margin-left:-4.2%;
+	border:1px solid red;
+	text-align:right;
+	padding: 0 2px 0 1px;
+	color:maroon;
+	text-shadow:none;
+}
+#last{
+	width:20.5%;
+	background-color:yellow;
+}
+#last:hover{
+	background-color:white;
+}
+.col0{
+	background-color:rgb(105,205,15);
+}
+.col1{
+	color:rgb(190,20,20);
+	text-shadow:2px 2px 6px black;
+}
+.col2{
+	color:rgb(0,0,0);
+	text-shadow:2px 2px 7px green;
+}
+.col3{
+	width:20.6%;
+	background-color:green;
+	color:darkblue;
+}
+.title{
+	font-size:30px;
+	color:black;
+	text-align:center;
+}
+@media(max-width:1085px){
+	input{
+		font-size:23px;
+		width:15%;
+	}
+	#first{
+		width:68%;
+	}
+	.col3{
+		width:30.8%;
+	}
+	#last{
+		width:30.8%;
+	}
+	.calculi{
+		margin-left:28%;
+	}
+}
+@media(max-width:655px){
+	input{
+		font-size:23px;
+		width:20%;
+	}
+	#first{
+		width:90%;
+	}
+	.col3{
+		width:41%;
+	}
+	#last{
+		width:41%;
+	}
+	.calculi{
+		margin-left:22%;
+	}
+}
+
+	  function power(){
+	  let po=cal.calculator.value;
+	  cal.calculator.value="Math.pow("+po+",";
+	  }
+      	 
+	  
+	  </script>
+ </body>
+</html>
+
