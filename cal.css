@@ -94,3 +94,22 @@ input:hover{
 		margin-left:22%;
 	}
 }
+@media(max-width:460px){
+	input{
+		font-size:25px;
+		width:24%;
+	}
+	#first{
+		width:100%;
+		margin-left:-1.5%;
+	}
+	.col3{
+		width:49%;
+	}
+	#last{
+		width:49%;
+	}
+    .calculi{
+		margin-left:2%;
+	}
+}
